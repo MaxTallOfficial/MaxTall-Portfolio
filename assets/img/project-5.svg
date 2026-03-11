@@ -1,0 +1,13 @@
+﻿<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='780' viewBox='0 0 1200 780'>
+  <defs>
+    <linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+      <stop offset='0%' stop-color='#fff0eb'/>
+      <stop offset='100%' stop-color='#ffc6af'/>
+    </linearGradient>
+  </defs>
+  <rect width='1200' height='780' fill='url(#g)'/>
+  <rect x='72' y='72' width='1056' height='636' rx='18' fill='rgba(255,255,255,0.72)' stroke='rgba(26,26,26,0.18)'/>
+  <text x='120' y='338' fill='#1A1A1A' font-size='72' font-family='Inter, Arial, sans-serif' font-weight='600'>Nord Landing</text>
+  <text x='120' y='404' fill='#1A1A1A' font-size='30' font-family='Inter, Arial, sans-serif'>Landing</text>
+  <rect x='120' y='446' width='240' height='4' fill='#E85D2F'/>
+</svg>
