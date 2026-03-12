@@ -27,6 +27,8 @@
     about_title: "Создаю чистые и выразительные digital-интерфейсы",
     about_bio:
       "Работаю с интерфейсами и айдентикой, соединяя визуальную эстетику и бизнес-задачи. Люблю чистую типографику, осознанный UX и аккуратный продакшен.",
+    about_experience:
+      "За 10 лет работы веду проекты от идеи и прототипа до финального UI и сопровождения передачи в разработку.",
 
     services_label: "Услуги",
     services_title: "Услуги, которые ведут к результату",
@@ -114,6 +116,8 @@
     about_title: "I craft clean and expressive digital interfaces",
     about_bio:
       "I work with interfaces and brand visuals, connecting aesthetic quality with business goals. I value clean typography, thoughtful UX and production accuracy.",
+    about_experience:
+      "Across 10 years, I lead projects from concept and prototyping to final UI and smooth handoff to development.",
 
     services_label: "Services",
     services_title: "Services that drive measurable results",

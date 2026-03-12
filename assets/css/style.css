@@ -593,23 +593,28 @@ h3 {
   font-size: 15px;
 }
 
+.about__content > p:not(.section-label) + p:not(.section-label) {
+  margin-top: 8px;
+}
+
 .about__metrics {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 190px));
-  gap: 10px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 28px;
 }
 
 .about__metric {
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 12px 14px;
-  background: linear-gradient(135deg, #ffffff 0%, #fff8f5 100%);
+  border: 0;
+  padding: 0;
+  background: transparent;
+  min-width: 120px;
 }
 
 .about__metric .counter {
   margin-bottom: 2px;
-  font-size: 30px;
+  font-size: 28px;
   color: var(--color-text);
 }
 
@@ -619,40 +624,6 @@ h3 {
   color: var(--color-muted);
 }
 
-.about__stack {
-  list-style: none;
-  margin: 20px 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.about__stack li {
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: 8px 14px;
-  font-size: 13px;
-}
-
-.about__links {
-  margin-top: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.about__links a {
-  font-size: 14px;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-  transition: color var(--transition);
-}
-
-.about__links a:hover {
-  color: var(--color-accent);
-}
 
 .services__cards {
   display: grid;
@@ -1081,7 +1052,6 @@ h3 {
 .site-footer__bottom {
   margin-top: 28px;
   padding-top: 12px;
-  border-top: 1px solid var(--color-border);
   display: flex;
   align-items: center;
   justify-content: space-between;
