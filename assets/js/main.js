@@ -14,8 +14,6 @@
     burger: document.getElementById("burger"),
     mobileMenu: document.getElementById("mobile-menu"),
     langButtons: Array.from(document.querySelectorAll("[data-lang-btn]")),
-    filterButtons: Array.from(document.querySelectorAll(".project-filters__btn")),
-    projectGrid: document.getElementById("projects-grid"),
     projectCards: Array.from(document.querySelectorAll(".project-card")),
     cursor: document.getElementById("cursor"),
     heroMockup: document.getElementById("hero-mockup")
@@ -80,6 +78,7 @@
     });
 
     updateMeta(langPack);
+    applyTypography();
   }
 
   function setupLanguage() {
@@ -109,9 +108,15 @@
   function setupMenu() {
     if (!refs.burger || !refs.mobileMenu) return;
 
+    const closeButton = refs.mobileMenu.querySelector(".mobile-menu__close");
+
     refs.burger.addEventListener("click", () => {
       toggleMenu();
     });
+
+    if (closeButton) {
+      closeButton.addEventListener("click", () => toggleMenu(false));
+    }
 
     refs.mobileMenu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => toggleMenu(false));
@@ -174,7 +179,7 @@
   }
 
   function setupButtonsRipple() {
-    document.querySelectorAll(".button, .project-filters__btn").forEach((button) => {
+    document.querySelectorAll(".btn").forEach((button) => {
       button.addEventListener("click", (event) => {
         const rect = button.getBoundingClientRect();
         const x = event.clientX - rect.left;
@@ -227,9 +232,44 @@
     counters.forEach((node) => observer.observe(node));
   }
 
+  function applyTypography() {
+    if (typeof window.Typograf === "undefined") return;
+    const root = document.body;
+    if (!root) return;
+
+    const tp = new window.Typograf({
+      locale: ["ru", "en-US"]
+    });
+
+    const rejectTags = new Set(["SCRIPT", "STYLE", "NOSCRIPT", "TEXTAREA", "CODE", "PRE"]);
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        const parent = node.parentElement;
+        if (!parent) return NodeFilter.FILTER_REJECT;
+        if (parent.closest("[data-no-typo]")) return NodeFilter.FILTER_REJECT;
+        if (rejectTags.has(parent.tagName)) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+
+    const nodes = [];
+    while (walker.nextNode()) {
+      nodes.push(walker.currentNode);
+    }
+
+    nodes.forEach((node) => {
+      const original = node.nodeValue;
+      const next = tp.execute(original);
+      if (next && next !== original) {
+        node.nodeValue = next;
+      }
+    });
+  }
+
   function setupSimpleReveals() {
     const nodes = document.querySelectorAll(
-      ".section-label, .section-title, .service-card, .step, .principle, .project-card, .contact__line, .contact__socials, .contact__channel"
+      ".section-label, .section-title, .service-card, .principle, .project-card, .contact__line, .contact__socials, .contact__channel"
     );
 
     nodes.forEach((node) => node.classList.add("reveal"));
@@ -261,7 +301,8 @@
         opacity: 0,
         duration: 1,
         ease: "expo.out",
-        stagger: 0.12
+        stagger: 0.12,
+        clearProps: "opacity,transform"
       });
 
       gsap.from(".button--order", {
@@ -269,7 +310,8 @@
         opacity: 0,
         duration: 0.7,
         delay: 0.4,
-        ease: "power2.out"
+        ease: "power2.out",
+        clearProps: "opacity,transform"
       });
 
       gsap.to(".button--order", {
@@ -285,6 +327,7 @@
           clipPath: "inset(0 100% 0 0)",
           duration: 0.9,
           ease: "power2.out",
+          clearProps: "clipPath",
           scrollTrigger: {
             trigger: title,
             start: "top 82%"
@@ -299,6 +342,7 @@
         duration: 0.75,
         stagger: 0.08,
         ease: "power2.out",
+        clearProps: "opacity,transform",
         scrollTrigger: {
           trigger: "#projects-grid",
           start: "top 80%"
@@ -344,39 +388,6 @@
     animate();
   }
 
-  function setupPortfolioFilter() {
-    if (!refs.filterButtons.length || !refs.projectCards.length) return;
-
-    const hasGSAPFlip = Boolean(window.gsap && window.Flip);
-    if (hasGSAPFlip) window.gsap.registerPlugin(window.Flip);
-
-    refs.filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const filter = button.dataset.filter;
-        if (!filter) return;
-
-        refs.filterButtons.forEach((btn) => btn.classList.toggle("is-active", btn === button));
-
-        const flipState = hasGSAPFlip ? window.Flip.getState(refs.projectCards) : null;
-
-        refs.projectCards.forEach((card) => {
-          const categories = (card.dataset.category || "").split(" ");
-          const show = filter === "all" || categories.includes(filter);
-          card.classList.toggle("is-hidden", !show);
-        });
-
-        if (hasGSAPFlip) {
-          window.Flip.from(flipState, {
-            duration: 0.45,
-            ease: "power1.out",
-            absolute: true,
-            stagger: 0.03
-          });
-        }
-      });
-    });
-  }
-
   function init() {
     runPreloader();
     setupLanguage();
@@ -389,7 +400,6 @@
     setupSimpleReveals();
     setupGSAP();
     setupHeroParallax();
-    setupPortfolioFilter();
   }
 
   if (document.readyState === "loading") {

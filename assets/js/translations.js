@@ -13,7 +13,7 @@
     nav_projects: "Проекты",
     nav_contact: "Связаться",
 
-    hero_label: "Портфолио веб-дизайнера",
+    hero_label: "",
     hero_title: "Создаю сайты, которые выглядят уверенно и работают на результат",
     hero_subtitle:
       "Лендинги, редизайн и UI-системы для брендов, стартапов и международных команд.",
@@ -24,20 +24,28 @@
     hero_mockup_title: "Project Landing",
 
     about_label: "Обо мне",
-    about_title: "Дизайню веб-продукты, где важна ясность и характер",
+    about_title: "Создаю чистые и выразительные digital-интерфейсы",
     about_bio:
       "Работаю с интерфейсами и айдентикой, соединяя визуальную эстетику и бизнес-задачи. Люблю чистую типографику, осознанный UX и аккуратный продакшен.",
 
-    services_label: "Процесс создания сайта",
-    services_title: "Услуги и этапы, которые ведут к результату",
+    services_label: "Услуги",
+    services_title: "Услуги, которые ведут к результату",
     service_1_title: "Дизайн сайта",
     service_1_text: "Структура, визуал и адаптивные макеты под задачи бренда.",
+    service_1_detail:
+      "Проектирую архитектуру страницы, типографику и визуальный ритм, чтобы сайт был понятным и конверсионным на всех экранах.",
     service_2_title: "UI Kit",
     service_2_text: "Компоненты и стили для быстрой сборки и масштабирования.",
+    service_2_detail:
+      "Собираю библиотеку компонентов и токенов, чтобы дизайн передавался в разработку без потери логики и лишних согласований.",
     service_3_title: "Редизайн",
     service_3_text: "Обновление текущего сайта с акцентом на конверсию и UX.",
+    service_3_detail:
+      "Провожу аудит слабых точек, обновляю интерфейс и контентные акценты, чтобы продукт выглядел современно и работал эффективнее.",
     service_4_title: "Landing",
     service_4_text: "Одностраничные решения под продукт, запуск или промо-кампанию.",
+    service_4_detail:
+      "Создаю точечные лендинги с ясной логикой блоков, сильным первым экраном и удобным сценарием действия для пользователя.",
 
     step_1_title: "Анализ",
     step_1_text: "Исследование ниши, аудитории и задач, формирование структуры проекта.",
@@ -58,9 +66,10 @@
     principle_4_text: "Только то, что помогает конверсии и раскрывает ценность продукта.",
 
     projects_label: "Проекты",
-    projects_title: "Избранные кейсы с Behance",
+    projects_title: "Последние кейсы",
     project_view: "Смотреть",
-    projects_all: "Все проекты",
+    projects_cta_behance: "Behance",
+    projects_cta_dribbble: "Dribbble",
     filter_all: "Все",
     filter_landing: "Лендинги",
     filter_redesign: "Редизайн",
@@ -72,7 +81,9 @@
     channel_text: "Разборы интерфейсов, процесс работы над проектами и полезные ресурсы.",
     channel_link: "Подписаться ->",
 
-    footer_copy: "MtallTZ All rights reserved"
+    footer_mail: "Почта",
+    footer_contact: "Связаться",
+    footer_copy: "MaxTall ® All rights reserved. 2026"
   },
 
   en: {
@@ -89,7 +100,7 @@
     nav_projects: "Projects",
     nav_contact: "Contact",
 
-    hero_label: "Web designer portfolio",
+    hero_label: "",
     hero_title: "I design websites that look strong and perform with purpose",
     hero_subtitle:
       "Landing pages, redesign and UI systems for brands, startups and international teams.",
@@ -100,20 +111,28 @@
     hero_mockup_title: "Project Landing",
 
     about_label: "About",
-    about_title: "I build web products where clarity meets visual character",
+    about_title: "I craft clean and expressive digital interfaces",
     about_bio:
       "I work with interfaces and brand visuals, connecting aesthetic quality with business goals. I value clean typography, thoughtful UX and production accuracy.",
 
-    services_label: "Website creation process",
-    services_title: "Services and stages that drive measurable results",
+    services_label: "Services",
+    services_title: "Services that drive measurable results",
     service_1_title: "Website Design",
     service_1_text: "Structure, visuals and responsive layouts aligned with brand goals.",
+    service_1_detail:
+      "I design page architecture, typography and visual rhythm so the website stays clear and conversion-oriented on every screen.",
     service_2_title: "UI Kit",
     service_2_text: "Reusable components and styles for faster product growth.",
+    service_2_detail:
+      "I build component and token libraries so design handoff remains consistent and development stays predictable.",
     service_3_title: "Redesign",
     service_3_text: "Refreshing existing websites with conversion and UX focus.",
+    service_3_detail:
+      "I audit weak points, rebuild interface hierarchy and sharpen content focus to improve clarity and performance.",
     service_4_title: "Landing",
     service_4_text: "Focused one-page solutions for launches, products and campaigns.",
+    service_4_detail:
+      "I create focused landing pages with a strong first screen and a clear action flow that supports campaign goals.",
 
     step_1_title: "Analysis",
     step_1_text: "Research of audience, market and goals with clear project structure.",
@@ -134,9 +153,10 @@
     principle_4_text: "Only elements that improve conversion and value perception.",
 
     projects_label: "Projects",
-    projects_title: "Selected Behance cases",
+    projects_title: "Latest cases",
     project_view: "View",
-    projects_all: "All projects",
+    projects_cta_behance: "Behance",
+    projects_cta_dribbble: "Dribbble",
     filter_all: "All",
     filter_landing: "Landing",
     filter_redesign: "Redesign",
@@ -148,6 +168,8 @@
     channel_text: "Interface breakdowns, behind-the-scenes process and practical resources.",
     channel_link: "Subscribe ->",
 
-    footer_copy: "MtallTZ All rights reserved"
+    footer_mail: "Mail",
+    footer_contact: "Contact",
+    footer_copy: "MaxTall ® All rights reserved. 2026"
   }
 };

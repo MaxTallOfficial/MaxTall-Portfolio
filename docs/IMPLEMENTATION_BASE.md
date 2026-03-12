@@ -7,7 +7,7 @@
 - Header/Nav: `index.html` (`.site-header`)
 - Hero: `index.html` (`#hero`)
 - About: `index.html` (`#about`)
-- Services + Steps: `index.html` (`#services`)
+- Services: `index.html` (`#services`)
 - Principles: `index.html` (`#principles`)
 - Portfolio: `index.html` (`#projects`)
 - Contact CTA + socials + TG channel: `index.html` (`#contact`)
@@ -26,7 +26,7 @@
 - Header hide/show on scroll: `assets/js/main.js` (`setupHeaderOnScroll`)
 - Mobile fullscreen menu: `assets/js/main.js` (`setupMenu`)
 - Scroll progress bar: `assets/js/main.js` (`setupScrollProgress`)
-- Portfolio filter (with GSAP Flip fallback): `assets/js/main.js` (`setupPortfolioFilter`)
+- Portfolio grid animations: `assets/js/main.js` (`setupGSAP`)
 - Preloader + sessionStorage: `assets/js/main.js` (`runPreloader`)
 - Counters, reveal, ripple, cursor: `assets/js/main.js`
 
@@ -40,11 +40,11 @@
 ## 5) Ассеты
 
 - Логотип: `assets/img/logo-mt.svg` (из `Union.svg`)
-- Превью проектов: `assets/img/project-1.svg` ... `project-6.svg` (временные заглушки)
+- Превью проектов: `assets/img/cases/case-unidraft.jpg`, `assets/img/cases/case-yoola.jpg`, `assets/img/cases/case-sobran.jpg`, `assets/img/cases/case-ff15.jpg`
+- Заголовочный шрифт: `assets/fonts/BKANT.TTF`
 
 ## 6) Что заменить на следующем шаге
 
-1. Подставить реальные превью проектов (WebP + PNG fallback) вместо SVG-заглушек.
-2. Уточнить финальные тексты RU/EN для Hero/About/Services.
-3. Подставить финальные ссылки на конкретные кейсы Behance.
-4. При необходимости усилить анимации GSAP под референс.
+1. При необходимости сконвертировать `case-*.jpg` в `WebP` и добавить fallback.
+2. Уточнить финальные тексты RU/EN для Hero/About/Services/Projects.
+3. При необходимости усилить анимации GSAP под референс.
